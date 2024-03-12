@@ -1,0 +1,65 @@
+{{ 'section-our-story.css' | asset_url | stylesheet_tag }}
+<div class="our-story-section page-width ">
+    <div class="our-story-content">
+        <div class="our-story-label">
+            <div class="our-story-label-wrapper">
+                <img class="our-story-label__logo" width="48" height="18" src="https://cdn.shopify.com/s/files/1/0567/9126/9430/files/crown_brown.svg?v=1679916001" alt="label image">
+            </div>
+        </div>
+        {%- if section.settings.heading != blank -%}
+        <h3 class="our-story-title">{{ section.settings.heading }}</h3>
+        {%- endif -%}
+        {%- if section.settings.description != blank -%}
+        <div class="our-story-description">
+            {{ section.settings.description }}
+        </div>
+        {%- endif -%}
+        {%- if section.settings.button_label != blank and section.settings.button_url != blank -%}
+        <a class="our-story-link" href="{{ section.settings.button_url }}">{{ section.settings.button_label }}</a>
+        {%- endif -%}
+    </div>
+    {%- if section.settings.story_image != blank -%}
+    <div class="our-story-img">
+        <img src="{{ section.settings.story_image | image_url }}" alt="Story image">
+    </div>
+    {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Our Story",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "image_picker",
+      "label": "Story Image",
+      "id": "story_image"
+    },
+    {
+      "type": "text",
+      "label": "Heading",
+      "id": "heading"
+    },
+    {
+      "type": "richtext",
+      "label": "Description",
+      "id": "description"
+    },
+    {
+      "type": "text",
+      "label": "Button Label",
+      "id": "button_label"
+    },
+    {
+      "type": "url",
+      "label": "Button URL",
+      "id": "button_url"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our Story"
+    }
+  ]
+}
+{% endschema %}

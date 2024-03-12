@@ -1,0 +1,108 @@
+.about-video {
+    margin: 56px auto 80px;
+}
+
+.about-video .about-video-wrapper {
+    width: 100%;
+    border: 2px solid #654e39;
+    padding: 35px 32px 55px;
+    position: relative;
+}
+
+.about-video .about-video-title, .about-video .about-video-subtitle {
+    font-family: var(--font-MontecatiniProSemibold-family);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #654e39;
+    padding: 0;
+    margin: 0px;
+}
+
+.about-video .about-video-media {
+    width: 100%;
+    max-width: 1104px;
+    height: 190px;
+    margin: 10px auto 20px;
+    border: 2px solid #654e39;
+    padding: 8px;
+}
+
+.about-video .about-video-media video {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    vertical-align: top;
+}
+
+.about-video .about-video-btn {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translate(-50%);
+    bottom: -28px;
+    font-family: var(--font-Calder-family);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background: #654e39;
+    padding: 15px;
+    min-width: 200px;
+    text-decoration: none;
+}
+
+.about-video .about-video-btn:hover {
+    background: var(--color_button_background_hover);
+}
+
+@media screen and (min-width: 350px) {
+  .about-video .about-video-title, .about-video .about-video-subtitle {
+      font-size: 40px;
+      padding: 0 10px;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .about-video .about-video-title {
+      padding: 0 20px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .about-video {
+      margin: 56px auto;
+  }
+  .about-video .about-video-wrapper {
+      padding: 40px 32px;
+  }
+  .about-video .about-video-media {
+      height: 365px;
+      margin: 20px auto;
+  }
+  .about-video .about-video-btn {
+      min-width: 240px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .about-video {
+      margin: 96px auto;
+  }
+  .about-video .about-video-wrapper {
+      padding: 56px 40px;
+  }
+  .about-video .about-video-title, .about-video .about-video-subtitle {
+      font-size: 72px;
+  }
+  .about-video .about-video-media {
+      margin: 20px auto 37px;
+  }
+}

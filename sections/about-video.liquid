@@ -1,0 +1,66 @@
+{% if section.settings.video_url != blank %}
+{{ 'section-about-video.css' | asset_url | stylesheet_tag }}
+<div class="about-video page-width">
+    <div class="about-video-wrapper">
+        <div class="bd-img bd-hz"></div>
+        <div class="bd-img bd-vr"></div>
+        {% if section.settings.top_heading != blank %}
+        <p class="about-video-title">{{ section.settings.top_heading }}</p>
+        {% endif %}
+        <div class="about-video-media">
+            <video autoplay="autoplay" loop="loop" muted="" defaultmuted="" playsinline="" oncontextmenu="return false;" preload="auto">
+                <source src="{{ section.settings.video_url }}" type="video/mp4">
+            </video>
+        </div>
+        {% if section.settings.bottom_heading != blank %}
+        <p class="about-video-subtitle">{{ section.settings.bottom_heading }}</p>
+        {% endif %}
+        {% if section.settings.button_label != blank and section.settings.button_url != blank %}
+        <a class="about-video-btn" href="{{ section.settings.button_url }}">{{ section.settings.button_label }}</a>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
+{% schema %}
+{
+  "name": "About Video",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Top Heading",
+      "id": "top_heading"
+    },
+    {
+      "type": "text",
+      "label": "Bottom Heading",
+      "id": "bottom_heading"
+    },
+    {
+      "type": "url",
+      "label": "Video URL",
+      "id": "video_url"
+    },
+    {
+      "type": "text",
+      "label": "Button Label ",
+      "id": "button_label"
+    },
+    {
+      "type": "url",
+      "label": "Button URL",
+      "id": "button_url"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Video"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

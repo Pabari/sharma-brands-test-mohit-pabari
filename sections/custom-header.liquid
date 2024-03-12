@@ -1,0 +1,141 @@
+<link rel="stylesheet" href="{{ 'section-custom-header.css' | asset_url }}" media="print" onload="this.media='all'">
+<script>
+  /** Hide video & sticky scroll **/
+  if (window.innerWidth > 992) {
+    window.addEventListener('scroll', function() {
+      
+        var header = document.querySelector('.custom-header');
+        var headerHeight = header.offsetTop - 50;
+        var scrollPosition = window.scrollY;
+        var header_wrap = document.querySelector('.header__pop-up-wrap');
+    
+        if (scrollPosition > headerHeight) {
+          header_wrap.classList.add('fixed');
+          document.querySelector('.header-video').style.display = "none";
+        } else {
+          header_wrap.classList.remove('fixed');
+        }
+      
+    });
+  }
+
+  /** Mobile Menu open / close **/
+  document.addEventListener('DOMContentLoaded', function() {
+    var html = document.querySelector('html');
+    var header_menu_btn = document.querySelector('.header__button--menu');
+    var header = document.querySelector('.custom-header');
+    var header_wrap = document.querySelector('.header__pop-up-wrap');
+  
+    header_menu_btn.addEventListener('click', function() {
+      html.classList.toggle('header__pop-up--open');
+      header.classList.toggle('header__pop-up--open');
+      header_wrap.classList.toggle('open');
+    });
+  });
+
+</script>
+<div class="header__pop-up-wrap header__backgroung-image">
+    {% if section.settings.logo != blank %}
+    <a href="/" class="header__heading-link link link--text">
+        <img
+          src="{{ section.settings.logo | image_url: width: 112 }}"
+          alt="{{ section.settings.logo.alt | escape }}"
+          loading="lazy"
+        >
+    </a>
+    {% endif %}
+    <div class="header__wrap header__wrap--desktop">
+        {% if section.settings.desktop_left_menu != blank %}
+        <div class="header__left-links">
+            {%- for link in section.settings.desktop_left_menu.links -%}
+            <div class="header__collection-item">
+                <a class="link header__collection-link" href="{{- link.url -}}">{{- link.title | escape -}}</a>
+            </div>
+            {%- endfor -%}
+        </div>
+        {% endif %}
+        {% if section.settings.desktop_right_menu != blank %}
+        <div class="header__right-links">
+            {%- for link in section.settings.desktop_right_menu.links -%}
+            <div class="header__sublink-item">
+                <a class="link header__sublink-link" href="{{- link.url -}}">{{- link.title | escape -}}</a>
+            </div>
+            {%- endfor -%}
+            <div class="link header__sublink-link cart-drawer__btn">Cart(<span>0</span>)</div>
+        </div>
+        {% endif %}
+    </div>
+    <div class="header__wrap--mobile">
+        {%- if section.settings.mobile_top_menu != blank -%}
+        <div class="header__top-links">
+            {%- for link in section.settings.mobile_top_menu.links -%}
+            <a class="link" href="{{- link.url -}}">{{- link.title | escape -}}</a>
+            {%- endfor -%}
+        </div>
+        {%- endif -%}
+        {%- if section.settings.mobile_bottom_menu != blank -%}
+        <div class="header__bottom-links">
+            {%- for link in section.settings.mobile_bottom_menu.links -%}
+            <a class="link" href="{{- link.url -}}">{{- link.title | escape -}}</a>
+            {%- endfor -%}
+        </div>
+        {%- endif -%}
+    </div>
+    <div class="header__button">
+        <div class="button__text header__button--menu">
+            <div class="button button__text--close">CLOSE</div>
+            <div class="button button__text--menu">MENU / SHOP</div>
+        </div>
+        <div class="button__svg cart-drawer__btn">
+            <span>0</span>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Header",
+    "class": "custom-header",
+    "limit": 1,
+    "settings": [
+      {
+        "type": "image_picker",
+        "label": "Logo",
+        "id": "logo"
+      },
+      {
+        "type": "header",
+        "content": "Desktop"
+      },
+      {
+        "type": "link_list",
+        "label": "Desktop Left Menu",
+        "id": "desktop_left_menu"
+      },
+      {
+        "type": "link_list",
+        "label": "Desktop Right Menu",
+        "id": "desktop_right_menu"
+      },
+      {
+        "type": "header",
+        "content": "Mobile"
+      },
+      {
+        "type": "link_list",
+        "label": "Mobile Top Menu",
+        "id": "mobile_top_menu"
+      },
+      {
+        "type": "link_list",
+        "label": "Mobile Bottom Menu",
+        "id": "mobile_bottom_menu"
+      }
+    ],
+    "enabled_on": {
+      "templates": ["*"],
+      "groups": ["header"]
+    }
+  }
+{% endschema %}

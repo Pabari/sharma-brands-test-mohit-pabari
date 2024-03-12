@@ -1,0 +1,43 @@
+{% if section.settings.video_url != blank and template.name contains "index" %}
+  <link rel="stylesheet" href="{{ 'section-header-video.css' | asset_url }}" media="print" onload="this.media='all'">
+  <div class="header-video-wrapper">
+    <div class="bd-img bd-hz"></div>
+    <div class="bd-img bd-vr"></div>
+    <video autoplay="" playsinline="" muted="" loop="" class="video ">
+        <source src="{{ section.settings.video_url }}" title="">
+    </video>
+    {% if section.settings.video_logo != blank %}
+    <div class="header-video-logo">
+        <img src="{{ section.settings.video_logo | image_url: width: 432 }}" alt="{{ section.settings.video_logo.alt | escape }}" loading="lazy">
+    </div>
+    {% endif %}
+  </div>
+{% endif %}
+{% schema %}
+{
+  "name": "Header Video",
+  "class": "header-video",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "url",
+      "label": "Video URL",
+      "id": "video_url"
+    },
+    {
+      "type": "image_picker",
+      "label": "Video Logo",
+      "id": "video_logo"
+    }
+  ],
+  "enabled_on": {
+    "templates": ["index"],
+    "groups": ["header"]
+  },
+  "presets": [
+    {
+      "name": "Header Video"
+    }
+  ]
+}
+{% endschema %}

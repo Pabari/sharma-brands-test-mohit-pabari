@@ -1,0 +1,207 @@
+.quotes-slider-section {
+  position: relative;
+  margin: 5px 0 35px;
+}
+
+.quotes-slider-section .page-width {
+    max-width: 1368px;
+    padding: 0 20px;
+}
+
+.quotes-slider-section .quotes-slider__wrap {
+    border: 2px solid #654e39;
+    position: relative;
+}
+
+.quotes-slider-section .quotes-slider__inner.content {
+    position: relative;
+    z-index: 1;
+}
+
+.quotes-slider-section .quotes-slider__icon {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.quotes-slider-section .quotes-slider__icon svg {
+    width: 48px;
+    height: 18px;
+}
+
+.quotes-slider-section .quotes-slider__text {
+    font-family: var(--font-MontecatiniProSemibold-family);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #654e39;
+    letter-spacing: 0;
+    min-width: 80%;
+    margin: 24px auto 30px;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.quotes-slider-section .quotes-slider__text div {
+  width: 100%;
+}
+
+.quotes-slider-section .quotes-slider__text .revers {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    display: inline-block;
+}
+
+.quotes-slider-section .quotes-slider__author {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.quotes-slider-section .quotes-slider__author img {
+    margin: 0 auto;
+    max-height: 44px;
+    scale: .8;
+}
+
+.quotes-slider-section .quotes-arrows {
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    opacity: 1;
+}
+
+.quotes-slider-section .quotes-arrows .page-width {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: inherit;
+    bottom: 40px;
+    padding: 0 130px;
+}
+
+.quotes-slider-section .quotes-arrows .quote-prev-button,
+.quotes-slider-section .quotes-arrows .quote-next-button {
+    cursor: pointer;
+    -webkit-transition: opacity .1s ease-out;
+    transition: opacity .1s ease-out;
+}
+
+.quotes-slider-section .bd-img {
+  display: block;
+}
+
+@media screen and (min-width: 350px) {
+  .quotes-slider-section .quotes-slider__text {
+    height: 350px;
+  }
+  .quotes-slider-section .quotes-slider__wrap {
+      padding: 45px 30px 132px;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .quotes-slider-section .quotes-slider__text {
+    height: 250px;
+  }
+  .quotes-slider-section .quotes-slider__wrap {
+      padding: 45px 45px 132px;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .quotes-slider-section .quotes-slider__wrap {
+    padding: 45px 45px 132px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .quotes-slider-section .quotes-slider__wrap {
+    padding: 45px 45px 42px;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .quotes-slider-section .quotes-slider__text {
+    height: 120px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .quotes-slider-section {
+    margin: 65px 0 96px;
+  }
+  .quotes-slider-section .quotes-slider__wrap {
+    padding: 48px 76px 52px;
+  }
+
+  .quotes-slider-section .quotes-slider__icon {
+      margin-bottom: 32px;
+  }
+  .quotes-slider-section .quotes-slider__text {
+    max-width: 75%;
+  }
+
+  .quotes-slider-section .quotes-slider__author img {
+      scale: 1;
+  }
+
+  .quotes-slider-section .quotes-arrows .page-width {
+    top: calc(50% - 20px);
+    padding: 0 76px;
+    bottom: inherit;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .quotes-slider-section .quotes-slider__text {
+      font-size: 72px;
+      min-width: 75%;
+      height: 206px;
+  }
+}

@@ -1,0 +1,39 @@
+.footer-video-wrapper {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0;
+    line-height: 0;
+    margin-bottom: 72px;
+}
+
+.footer-video .video {
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.footer-video.mobile {
+    display: block;
+}
+
+.footer-video.desktop {
+    display: none;
+}
+
+@media screen and (min-width: 576px) {
+  .footer-video-wrapper{
+      margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer-video.mobile {
+      display: none;
+  }
+  .footer-video.desktop {
+      display: block;
+  }
+}

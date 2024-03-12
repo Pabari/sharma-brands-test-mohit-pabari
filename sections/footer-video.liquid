@@ -1,0 +1,63 @@
+{% if section.settings.desktop_video != blank %}
+{{ 'section-footer-video.css' | asset_url | stylesheet_tag }}
+<div class="footer-video-wrapper">
+  <div class="footer-video mobile">
+    <video autoplay="" playsinline="" muted="" loop="" class="video uploaded-video">
+      <source src="{% if section.settings.mobile_video != blank %} {{ section.settings.mobile_video }} {% else %} {{ section.settings.desktop_video }} {% endif %}" title="">
+    </video>
+  </div>
+  <div class="footer-video desktop">
+    <video autoplay="" playsinline="" muted="" loop="" class="video uploaded-video">
+      <source src="{{ section.settings.desktop_video }}" title="">
+    </video>
+  </div>
+</div>
+<script>
+  var footer_video = document.querySelector(".footer-video-wrapper");
+  var section_footer = document.querySelector(".section-footer");
+  
+  setTimeout(function() {
+      var footer_video_height = footer_video.clientHeight;
+      section_footer.style.marginBottom = footer_video_height+'px';
+  }, 2000);
+
+  window.addEventListener('scroll', function() {
+      var footer_video_wrapper = document.querySelector(".footer-video-wrapper");
+      var section_footerHeight = section_footer.offsetTop
+      var scrollPosition = window.scrollY;
+    
+      if (scrollPosition > section_footerHeight) {
+        $('.footer-video-wrapper').css('opacity', '1');
+      } else {
+        $('.footer-video-wrapper').css('opacity', '0');
+      }
+    
+  });
+  
+  
+</script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Footer Video",
+  "class": "footer-video",
+  "settings": [
+    {
+      "type": "url",
+      "label": "Desktop Video",
+      "id": "desktop_video"
+    },
+    {
+      "type": "url",
+      "label": "Mobile Video",
+      "id": "mobile_video"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer Video"
+    }
+  ]
+}
+{% endschema %}

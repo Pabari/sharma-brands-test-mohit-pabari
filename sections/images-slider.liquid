@@ -1,0 +1,66 @@
+{% if section.blocks.size > 0 %}
+{{ 'section-images-slider.css' | asset_url | stylesheet_tag }}
+<div class="images-slider images-slider-{{ section.id }}">
+    <div class="swiper images-slider-swiper m-hide">
+        <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+            <div class="swiper-slide images-slider-image">
+                <img class="images-slider-img" src="{{ block.settings.image | image_url }}" alt="image" loading="lazy">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<script>
+  let images_slider = new Swiper(`.images-slider-swiper`, {
+    slidesPerGroup: 1,
+    speed:5000,
+    autoplay: {
+        delay: 1,
+        disableOnInteraction: false,
+    },
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    loop: true,
+    slideToClickedSlide: false,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: ".images-slider-swiper .drag-button-next",
+      prevEl: ".images-slider-swiper .drag-button-prev",
+    },
+    breakpoints: {
+      680: {
+        slidesPerGroup: 1,
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        loop: true,
+        slideToClickedSlide: false,
+        spaceBetween: 40,
+      }
+    },
+  });
+</script>
+{% endif %}
+{% schema %}
+{
+  "name": "Images Slider",
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Image",
+          "id": "image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Images Slider"
+    }
+  ]
+}
+{% endschema %}

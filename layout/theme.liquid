@@ -242,6 +242,7 @@
         font-family: var(--font-body-family);
         font-style: var(--font-body-style);
         font-weight: var(--font-body-weight);
+        background-color : #f7f3ef !important;
       }
 
       @media screen and (min-width: 750px) {
@@ -252,6 +253,205 @@
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
+
+    {% style %}
+      @font-face {
+          font-family: 'Calder';
+          src: url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/Calder-Dark.eot?v=1710237015');
+          src: url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/Calder-Dark.eot?v=1710237015?#iefix') format('embedded-opentype'),
+              url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/Calder-Dark.woff2?v=1710237014') format('woff2'),
+              url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/Calder-Dark.woff?v=1710237014') format('woff'),
+              url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/Calder-Dark.ttf?v=1710237015') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+          font-display: swap;
+      }
+
+      @font-face {
+          font-family: 'FoundersGrotesk';
+          src: url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/FoundersGrotesk-Regular.eot?v=1710237014');
+          src: url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/FoundersGrotesk-Regular.eot?v=1710237014?#iefix') format('embedded-opentype'),
+              url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/FoundersGrotesk-Regular.woff2?v=1710237014') format('woff2'),
+              url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/FoundersGrotesk-Regular.woff?v=1710237013') format('woff'),
+              url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/FoundersGrotesk-Regular.ttf?v=1710237014') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+          font-display: swap;
+      }
+
+      @font-face {
+          font-family: 'PAGRevolucion';
+          src: url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/PAGRevolucion.eot?v=1710237015');
+          src: url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/PAGRevolucion.eot?v=1710237015?#iefix') format('embedded-opentype'),
+              url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/PAGRevolucion.woff2?v=1710237014') format('woff2'),
+              url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/PAGRevolucion.woff?v=1710237014') format('woff'),
+              url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/PAGRevolucion.ttf?v=1710237014') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+          font-display: swap;
+      }
+
+      @font-face {
+          font-family: 'BiancoSerifRegular';
+          src: url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/BiancoSerifTrial-Regular.eot?v=1710237013');
+          src: url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/BiancoSerifTrial-Regular.eot?v=1710237013?#iefix') format('embedded-opentype'),
+              url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/BiancoSerifTrial-Regular.woff2?v=1710237014') format('woff2'),
+              url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/BiancoSerifTrial-Regular.woff?v=1710237014') format('woff'),
+              url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/BiancoSerifTrial-Regular.ttf?v=1710237014') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+          font-display: swap;
+      }
+
+      @font-face {
+          font-family: 'MontecatiniProNormale';
+          src: url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/MontecatiniPro-Normale.eot?v=1710237014');
+          src: url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/MontecatiniPro-Normale.eot?v=1710237014?#iefix') format('embedded-opentype'),
+              url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/MontecatiniPro-Normale.woff2?v=1710237014') format('woff2'),
+              url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/MontecatiniPro-Normale.woff?v=1710237014') format('woff'),
+              url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/MontecatiniPro-Normale.ttf?v=1710237015') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+          font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Montecatini Pro Test Normale';
+        src: url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/MontecatiniPro-NormaleMedium_65a0d324-f17f-4786-83c9-5314c843a3da.eot?v=1710239240');
+        src: url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/MontecatiniPro-NormaleMedium_65a0d324-f17f-4786-83c9-5314c843a3da.eot?v=1710239240?#iefix') format('embedded-opentype'),
+            url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/MontecatiniPro-NormaleMedium_53aee28f-89e1-4bd9-a578-a89c1df76e63.woff2?v=1710239240') format('woff2'),
+            url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/MontecatiniPro-NormaleMedium_8e54a37b-11a0-444e-b28a-de3987dc739a.woff?v=1710239241') format('woff'),
+            url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/MontecatiniPro-NormaleMedium_29c3576e-d44a-4d6e-9933-c0a116d3a3f0.ttf?v=1710239241') format('truetype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+
+      @font-face {
+          font-family: 'MontecatiniProSemibold';
+          src: url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/MontecatiniPro-NormaleSemibold.eot?v=1710237015');
+          src: url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/MontecatiniPro-NormaleSemibold.eot?v=1710237015?#iefix') format('embedded-opentype'),
+              url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/MontecatiniPro-NormaleSemibold.woff2?v=1710237014') format('woff2'),
+              url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/MontecatiniPro-NormaleSemibold.woff?v=1710237014') format('woff'),
+              url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/MontecatiniPro-NormaleSemibold.ttf?v=1710237014') format('truetype');
+          font-weight: 600;
+          font-style: normal;
+          font-display: swap;
+      }
+
+      @font-face {
+          font-family: 'MontecatiniProBold';
+          src: url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/MontecatiniPro-NormaleBold.eot?v=1710237015');
+          src: url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/MontecatiniPro-NormaleBold.eot?v=1710237015?#iefix') format('embedded-opentype'),
+              url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/MontecatiniPro-NormaleBold.woff2?v=1710237014') format('woff2'),
+              url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/MontecatiniPro-NormaleBold.woff?v=1710237014') format('woff'),
+              url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/MontecatiniPro-NormaleBold.ttf?v=1710237015') format('truetype');
+          font-weight: bold;
+          font-style: normal;
+          font-display: swap;
+      }
+    
+      @font-face {
+        font-family: 'MontecatiniProBold';
+        src: url('https://cdn.shopify.com/s/files/1/0632/6861/8448/files/MontecatiniPro-NormaleBold.otf?v=1710078770') format("opentype");
+        font-display: swap;
+      }
+
+      html, body {
+        overflow-x: hidden;
+      }
+    
+      :root {
+        /* FONTS */
+        --font-Calder-family: 'Calder', sans-serif;
+        --font-FoundersGrotesk-family: 'FoundersGrotesk', sans-serif;
+        --font-PAGRevolucion-family: 'PAGRevolucion', sans-serif;
+        --font-BiancoSerifRegular-family: 'BiancoSerifRegular', sans-serif;
+    
+        --font-MontecatiniProNormale-family: 'MontecatiniProNormale', sans-serif;
+        --font-MontecatiniProMedium-family: 'Montecatini Pro Test Normale';
+        --font-MontecatiniProSemibold-family: 'MontecatiniProSemibold', sans-serif;
+        --font-MontecatiniProBold-family: 'MontecatiniProBold', sans-serif;
+    
+        /* COLORS */
+        --color-links: #654e39;
+        --color-links-hover: #483e34;
+        --color-header: #31261D;
+        --color-text: #31261D;
+    
+        --color_button_background: #654e39;
+        --color_button_text: #ffffff;
+        --color_button_background_hover: #493a2c;
+        --color_button_text_hover: #ffffff;
+    
+        --color_button_alt_background: #738670;
+        --color_button_alt_text: #ffffff;
+        --color_button_alt_background_hover: #493a2c;
+        --color_button_alt_text_hover: #ffffff;
+    
+        --color_background_1: #f8f4f0;
+      }
+
+      /*** Custom CSS for global ***/
+      .bd-img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          pointer-events: none;
+          margin: 0;
+          display: none;
+      }
+      
+      
+      .bd-img.bd-hz:before,
+      .bd-img.bd-hz:after {
+          content: "";
+          position: absolute;
+          top: 3px;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-position: top;
+          border-radius: 17px;
+          background-image: url({{ 'dot_border_black.svg' | asset_url }});
+          background-size: 7px;
+          background-repeat: repeat-x;
+      }
+      
+      .bd-img.bd-hz:after {
+          background-position: bottom;
+          top: -3px;
+      }
+      
+      .bd-img.bd-vr:before,
+      .bd-img.bd-vr:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 3px;
+          width: 100%;
+          height: 100%;
+          background-position: left;
+          border-radius: 17px;
+          background-image: url({{ 'dot_border_black.svg' | asset_url }});
+          background-size: 7px;
+          background-repeat: repeat-y;
+      }
+      
+      .bd-img.bd-vr:after {
+          background-position: right;
+          left: -3px;
+      }
+      
+      @media screen and (min-width: 767px) {
+          .bd-img {
+              display: block !important;
+          }
+      }
+    {% endstyle %}
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -273,6 +473,11 @@
         onload="this.media='all'"
       >
     {%- endif -%}
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');

@@ -1,0 +1,99 @@
+{{ 'section-newsletter-subscription.css' | asset_url | stylesheet_tag }}
+<div class="nl-sub-sec page-width">
+    <div class="nl-sub-sec-border">
+        <div class="bd-img bd-hz"></div>
+        <div class="bd-img bd-vr"></div>
+        <div class="nl-sub-sec-wrapper">
+            {% if section.settings.subscription_image != blank %}
+            <div class="nl-sub-sec-img">
+                <img src="{{ section.settings.subscription_image | image_url }}" alt="Subscription image">
+            </div>
+            {% endif %}
+            <div class="nl-sub-sec-content">
+                {% if section.settings.heading != blank %}
+                <h3 class="nl-sub-sec-title">{{ section.settings.heading }}</h3>
+                {% endif %}
+                {% if section.settings.description != blank %}
+                <p class="nl-sub-sec-desc">{{ section.settings.description }}</p>
+                {% endif %}
+                <div class="nl-sub-sec-form">
+                    <form id="EmailForm" action="#" data-ajax-submit="#" method="GET" target="_blank" novalidate="novalidate" class="nl-sub-sec-form__email m-show">
+                        <div class="nl-sub-sec-form__wrapper">
+                            <input class="nl-sub-sec-form__input email__input" type="email" maxlength="256" name="email" data-name="Email" placeholder="ENTER YOUR EMAIL" id="k_id_email" required="">
+                            <button type="submit" class="nl-sub-sec-form__button email__button" name="commit" id="Subscribe" aria-label="submit form email">
+                                <svg width="30" height="26" viewBox="0 0 30 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.666992 13.0005H27.3337" stroke="white" stroke-width="4" stroke-miterlimit="10"></path>
+                                    <path d="M18 3.66699L27.3333 13.0003L18 22.3337" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="square"></path>
+                                </svg>
+                            </button>
+                            <div class="klaviyo_messages">
+                                <div class="success_message" style="display:none;"></div>
+                                <div class="error_message" style="display:none;"></div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="js-tl m-tl">
+                        <div class="klaviyo-form-SZkzfi"></div>
+                    </div>
+                </div>
+                {% if section.settings.form_switch_label != blank %}
+                <button class="nl-sub-sec-link js-nl-sub-sec-link" aria-label="change form">
+                {{ section.settings.form_switch_label }}
+                </button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var sub_btn = document.querySelector('.nl-sub-sec-link');
+    var email_form = document.querySelector('.nl-sub-sec-form__email');
+    var text_form = document.querySelector('.m-tl');
+  
+    sub_btn.addEventListener('click', function() {
+      email_form.classList.toggle('m-show');
+      text_form.classList.toggle('m-show');
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Newsletter Subscription",
+  "settings": [
+    {
+      "type": "image_picker",
+      "label": "Subscription Image",
+      "id": "subscription_image"
+    },
+    {
+      "type": "text",
+      "label": "Heading",
+      "id": "heading"
+    },
+    {
+      "type": "text",
+      "label": "Description",
+      "id": "description"
+    },
+    {
+      "type": "text",
+      "label": "Form Switch Label",
+      "id": "form_switch_label"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Newsletter Subscription"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

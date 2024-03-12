@@ -1,0 +1,223 @@
+.nl-sub-sec .nl-sub-sec-border {
+    padding: 8px;
+    border: 2px solid #654e39;
+    position: relative;
+}
+
+.nl-sub-sec .nl-sub-sec-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  padding: 8px 16px 16px;
+  position: relative;
+}
+
+.nl-sub-sec .nl-sub-sec-img {
+    width: 100%;
+    height: 175px;
+}
+
+.nl-sub-sec .nl-sub-sec-img img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    vertical-align: top;
+}
+
+.nl-sub-sec .nl-sub-sec-content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 38px 16px 24px;
+}
+
+.nl-sub-sec .nl-sub-sec-title {
+    font-family: var(--font-MontecatiniProSemibold-family);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 100%;
+    text-align: center;
+    color: #654e39;
+    padding: 0;
+    text-transform: uppercase;
+    margin: 0px;
+}
+
+.nl-sub-sec .nl-sub-sec-desc {
+    font-family: var(--font-BiancoSerifRegular-family);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: #654e39;
+    margin: 16px 0;
+    padding: 0 8px;
+}
+
+.nl-sub-sec .nl-sub-sec-form form.m-show {
+    display: block;
+}
+
+.nl-sub-sec .nl-sub-sec-form form {
+    display: none;
+}
+
+.nl-sub-sec .m-tl {
+    display: none;
+}
+
+.hm-sign .m-tl.m-show {
+    display: block;
+}
+
+.nl-sub-sec .nl-sub-sec-form .nl-sub-sec-form__wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.nl-sub-sec .nl-sub-sec-form .nl-sub-sec-form__input {
+    height: 56px;
+    border: 2px solid #654e39;
+    width: 100%;
+    padding-right: 70px;
+    padding-left: 15px;
+    font-family: var(--font-Calder-family);
+    color: #654e39;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    border-radius: 0;
+}
+
+.nl-sub-sec .nl-sub-sec-form .nl-sub-sec-form__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 63px;
+    height: 56px;
+    background: #654e39;
+    border: none;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.nl-sub-sec .nl-sub-sec-link {
+    font-family: var(--font-Calder-family);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    color: #654e39;
+    text-align: center;
+    border: none;
+    background: transparent;
+    text-decoration: none;
+    border-bottom: 2px solid #654e39;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    cursor: pointer;
+    margin: 16px auto 0;
+    padding: 0;
+}
+
+@media screen and (min-width: 680px) {
+  .nl-sub-sec .nl-sub-sec-form .nl-sub-sec-form__input {
+      font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .nl-sub-sec .nl-sub-sec-wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .nl-sub-sec .nl-sub-sec-img {
+      width: 50%;
+      height: 358px;
+      padding: 8px;
+      border: 2px solid #654e39;
+      margin-right: 8px;
+  }
+  .nl-sub-sec .nl-sub-sec-content {
+      margin: 0 auto;
+      width: 50%;
+      max-width: 550px;
+      padding: 0 0 0 8px;
+  }
+  .nl-sub-sec .nl-sub-sec-title {
+      text-align: start;
+      font-size: 60px;
+  }
+  .nl-sub-sec .nl-sub-sec-desc {
+      text-align: start;
+      padding: 0;
+  }
+  .nl-sub-sec .nl-sub-sec-link {
+      text-align: start;
+      margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .nl-sub-sec .nl-sub-sec-wrapper {
+      padding: 24px 25px;
+  }
+  .nl-sub-sec .nl-sub-sec-title {
+      font-size: 72px;
+  }
+  .nl-sub-sec .nl-sub-sec-desc {
+      line-height: 128%;
+      margin: 24px 0;
+  }
+
+  .nl-sub-sec .nl-sub-sec-link {
+      margin-top: 40px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .nl-sub-sec .nl-sub-sec-img {
+      width: calc(100% - 536px);
+  }
+  .nl-sub-sec .nl-sub-sec-content {
+      max-width: 490px;
+  }
+}
+

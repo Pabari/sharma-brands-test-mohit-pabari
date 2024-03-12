@@ -1,0 +1,198 @@
+{{ 'section-custom-footer.css' | asset_url | stylesheet_tag }}
+{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
+<div class="footer-content-top page-width">
+  <div class="footer-dotted-wrap">
+      <div class="bd-img bd-hz"></div>
+      <div class="bd-img bd-vr"></div>
+      <div class="footer-blocks-wrapper grid ">
+        {% if section.settings.footer_label != blank %}
+        <div class="grid-item footer-lable">
+            <img src="{{ section.settings.footer_label | image_url }}" alt="footer label"> 
+        </div>
+        {% endif %}
+        {% if section.settings.footer_menu != blank %}
+        <div class="grid-item linklist-links">
+            {%- for link in section.settings.footer_menu.links -%}
+            <li>
+                <a href="{{ link.url }}" class="link link--text">{{ link.title }}</a>
+            </li>
+            {%- endfor -%}
+        </div>
+        {% endif %}
+        {% if settings.social_facebook_link != blank or settings.social_instagram_link != blank or settings.social_tiktok_link != blank or settings.social_twitter_link != blank %}
+        <div class="grid-item footer_social-links">
+            {% if settings.social_instagram_link != blank %}
+            <li class="list-social-item">
+                <a href="{{ settings.social_instagram_link }}" target="_blank" class="list-social-link link">
+                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-instagram" viewBox="0 0 18 18">
+                        <path fill="currentColor" d="M8.77 1.58c2.34 0 2.62.01 3.54.05.86.04 1.32.18 1.63.3.41.17.7.35 1.01.66.3.3.5.6.65 1 .12.32.27.78.3 1.64.05.92.06 1.2.06 3.54s-.01 2.62-.05 3.54a4.79 4.79 0 01-.3 1.63c-.17.41-.35.7-.66 1.01-.3.3-.6.5-1.01.66-.31.12-.77.26-1.63.3-.92.04-1.2.05-3.54.05s-2.62 0-3.55-.05a4.79 4.79 0 01-1.62-.3c-.42-.16-.7-.35-1.01-.66-.31-.3-.5-.6-.66-1a4.87 4.87 0 01-.3-1.64c-.04-.92-.05-1.2-.05-3.54s0-2.62.05-3.54c.04-.86.18-1.32.3-1.63.16-.41.35-.7.66-1.01.3-.3.6-.5 1-.65.32-.12.78-.27 1.63-.3.93-.05 1.2-.06 3.55-.06zm0-1.58C6.39 0 6.09.01 5.15.05c-.93.04-1.57.2-2.13.4-.57.23-1.06.54-1.55 1.02C1 1.96.7 2.45.46 3.02c-.22.56-.37 1.2-.4 2.13C0 6.1 0 6.4 0 8.77s.01 2.68.05 3.61c.04.94.2 1.57.4 2.13.23.58.54 1.07 1.02 1.56.49.48.98.78 1.55 1.01.56.22 1.2.37 2.13.4.94.05 1.24.06 3.62.06 2.39 0 2.68-.01 3.62-.05.93-.04 1.57-.2 2.13-.41a4.27 4.27 0 001.55-1.01c.49-.49.79-.98 1.01-1.56.22-.55.37-1.19.41-2.13.04-.93.05-1.23.05-3.61 0-2.39 0-2.68-.05-3.62a6.47 6.47 0 00-.4-2.13 4.27 4.27 0 00-1.02-1.55A4.35 4.35 0 0014.52.46a6.43 6.43 0 00-2.13-.41A69 69 0 008.77 0z"></path>
+                        <path fill="currentColor" d="M8.8 4a4.5 4.5 0 100 9 4.5 4.5 0 000-9zm0 7.43a2.92 2.92 0 110-5.85 2.92 2.92 0 010 5.85zM13.43 5a1.05 1.05 0 100-2.1 1.05 1.05 0 000 2.1z"></path>
+                    </svg>
+                    <span class="visually-hidden">Instagram</span>
+                </a>
+            </li>
+            {% endif %}
+            {% if settings.social_facebook_link != blank %}
+            <li class="list-social-item">
+                <a href="{{ settings.social_facebook_link }}" target="_blank" class="list-social-link link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.03153 23L9 13H5V9H9V6.5C9 2.7886 11.2983 1 14.6091 1C16.1951 1 17.5581 1.11807 17.9553 1.17085V5.04948L15.6591 5.05052C13.8584 5.05052 13.5098 5.90614 13.5098 7.16171V9H18.75L16.75 13H13.5098V23H9.03153Z" fill="#654E39"></path>
+                    </svg>
+                    <span class="visually-hidden">Facebook</span>
+                </a>
+            </li>
+            {% endif %}
+            {% if settings.social_twitter_link != blank %}
+            <li class="list-social-item">
+                <a href="{{ settings.social_twitter_link }}" target="_blank" class="list-social-link link">
+                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-twitter" viewBox="0 0 18 15">
+                        <path fill="currentColor" d="M17.64 2.6a7.33 7.33 0 01-1.75 1.82c0 .05 0 .13.02.23l.02.23a9.97 9.97 0 01-1.69 5.54c-.57.85-1.24 1.62-2.02 2.28a9.09 9.09 0 01-2.82 1.6 10.23 10.23 0 01-8.9-.98c.34.02.61.04.83.04 1.64 0 3.1-.5 4.38-1.5a3.6 3.6 0 01-3.3-2.45A2.91 2.91 0 004 9.35a3.47 3.47 0 01-2.02-1.21 3.37 3.37 0 01-.8-2.22v-.03c.46.24.98.37 1.58.4a3.45 3.45 0 01-1.54-2.9c0-.61.14-1.2.45-1.79a9.68 9.68 0 003.2 2.6 10 10 0 004.08 1.07 3 3 0 01-.13-.8c0-.97.34-1.8 1.03-2.48A3.45 3.45 0 0112.4.96a3.49 3.49 0 012.54 1.1c.8-.15 1.54-.44 2.23-.85a3.4 3.4 0 01-1.54 1.94c.74-.1 1.4-.28 2.01-.54z"></path>
+                    </svg>
+                    <span class="visually-hidden">Twitter</span>
+                </a>
+            </li>
+            {% endif %}
+            {% if settings.social_tiktok_link != blank %}
+            <li class="list-social-item">
+                <a href="{{ settings.social_tiktok_link }}" target="_blank" class="list-social-link link">
+                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-tiktok" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.02 0H11s-.17 3.82 4.13 4.1v2.95s-2.3.14-4.13-1.26l.03 6.1a5.52 5.52 0 11-5.51-5.52h.77V9.4a2.5 2.5 0 101.76 2.4L8.02 0z" fill="currentColor"></path>
+                    </svg>
+                    <span class="visually-hidden">TikTok</span>
+                </a>
+            </li>
+            {% endif %}
+        </div>
+        {% endif %}
+        {%  if section.settings.enable_newsletter %}
+        <div class="grid-item footer-block--newsletter">
+            <div class="footer-block-newsletter">
+                <div class="footer-block-newsletter-icon">
+                    <svg width="48" height="18" viewBox="0 0 52 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M41.4075 19.9864C36.8437 18.2796 31.4019 17.451 25.9724 17.451C20.5429 17.451 15.1011 18.2673 10.5374 19.9864C10.3395 20.0606 10.2035 19.8132 10.3642 19.6772C12.912 17.587 18.1065 14.7672 25.9724 14.8538C33.8507 14.7672 39.0328 17.587 41.5806 19.6772C41.7414 19.8009 41.6053 20.0606 41.4075 19.9864ZM27.5802 1.60782C27.5802 0.717334 26.8629 0 25.9724 0C25.0819 0 24.3646 0.717334 24.3646 1.60782C24.3646 2.4983 25.0819 3.21563 25.9724 3.21563C26.8629 3.21563 27.5802 2.4983 27.5802 1.60782ZM20.0977 2.48593C20.0977 1.59545 19.3804 0.878115 18.4899 0.878115C17.5994 0.878115 16.8821 1.59545 16.8821 2.48593C16.8821 3.37642 17.5994 4.09375 18.4899 4.09375C19.3804 4.09375 20.0977 3.37642 20.0977 2.48593ZM11.7371 4.53899C11.7371 3.64851 11.0197 2.93117 10.1292 2.93117C9.23876 2.93117 8.52143 3.64851 8.52143 4.53899C8.52143 5.42947 9.23876 6.14681 10.1292 6.14681C11.0074 6.14681 11.7371 5.42947 11.7371 4.53899ZM41.2591 13.0233L40.7149 6.90124L35.4956 11.6505L32.9726 5.08317L29.1015 10.4508L25.9724 3.98244L22.831 10.4632L18.9599 5.09554L16.4368 11.6629L11.2176 6.91361L10.6734 13.0357C8.12566 10.9332 3.38878 9.16455 3.38878 9.16455C5.21922 11.0816 9.22639 16.8573 9.22639 16.8573C14.1735 13.8891 18.8362 12.0092 25.9601 12.0092C33.0839 12.0092 37.7466 13.8891 42.6937 16.8573C42.6937 16.8573 46.7009 11.0692 48.5313 9.16455C48.5437 9.16455 43.8068 10.9332 41.2591 13.0233ZM33.4673 4.09375C34.3578 4.09375 35.0751 3.37642 35.0751 2.48593C35.0751 1.59545 34.3578 0.878115 33.4673 0.878115C32.5768 0.878115 31.8595 1.59545 31.8595 2.48593C31.8595 3.37642 32.5768 4.09375 33.4673 4.09375ZM41.828 6.14681C42.7185 6.14681 43.4358 5.42947 43.4358 4.53899C43.4358 3.64851 42.7185 2.93117 41.828 2.93117C40.9375 2.93117 40.2202 3.64851 40.2202 4.53899C40.2202 5.42947 40.9375 6.14681 41.828 6.14681ZM3.228 7.32175C3.228 6.43127 2.51067 5.71393 1.62018 5.71393C0.729701 5.71393 0 6.43127 0 7.32175C0 8.21223 0.717333 8.92957 1.60782 8.92957C2.4983 8.92957 3.228 8.21223 3.228 7.32175ZM50.337 8.94193C51.2275 8.94193 51.9448 8.2246 51.9448 7.33412C51.9448 6.44363 51.2275 5.7263 50.337 5.7263C49.4465 5.7263 48.7292 6.44363 48.7292 7.33412C48.7292 8.2246 49.4465 8.94193 50.337 8.94193Z" fill="#654e39"></path>
+                    </svg>
+                    {%  if section.settings.newsletter_heading != blank %}
+                    <h2 class="footer-block-heading">{{ section.settings.newsletter_heading }}</h2>
+                    {% endif %}
+                </div>
+                {%  if section.settings.newsletter_subheading != blank %}
+                <div class="footer-block-newsletter-info">
+                    <p class="footer-block-subheading">{{ section.settings.newsletter_subheading }}</p>
+                </div>
+                {% endif %}
+                <div class="footer-block-newsletter-form">
+                    <form id="EmailForm" action="#" data-ajax-submit="#" method="GET" target="_blank" novalidate="novalidate" class="nl-sub-sec-form__email m-show">
+                        <div class="nl-sub-sec-form__wrapper">
+                            <input class="nl-sub-sec-form__input email__input" type="email" maxlength="256" name="email" data-name="Email" placeholder="ENTER YOUR EMAIL" id="k_id_email" required="">
+                            <button type="submit" class="nl-sub-sec-form__button email__button" name="commit" id="Subscribe" aria-label="submit form email">
+                                <svg width="30" height="26" viewBox="0 0 30 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.666992 13.0005H27.3337" stroke="white" stroke-width="4" stroke-miterlimit="10"></path>
+                                    <path d="M18 3.66699L27.3333 13.0003L18 22.3337" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="square"></path>
+                                </svg>
+                            </button>
+                            <div class="klaviyo_messages">
+                                <div class="success_message" style="display:none;"></div>
+                                <div class="error_message" style="display:none;"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+  </div>
+</div>
+
+{% if section.settings.footer_logo != blank %}
+<div class="footer-content-logo">
+  <a href="/" class="footer-logo-link link">
+    <img src="{{ section.settings.footer_logo | image_url }}" alt="{{ shop.name }}">
+  </a>
+</div>
+{% endif %}
+
+<div class="footer-content-bottom">
+  <div class="footer-content-bottom-wrapper page-width">
+      <div class="footer-column footer-localization isolate"></div>
+      <div class="footer-column footer-column--info">
+          <div class="footer-copyright caption">
+              <small class="copyright-content">
+                <a class="link copyright-content-link" href="/">&copy; {{ shop.name }}</a>
+              </small>
+              {% if section.settings.privacy_menu != blank %}
+                {%- for link in section.settings.privacy_menu.links -%}
+                <small class="copyright-content">
+                  <a class="link copyright-content-link" href="{{ link.url }}">{{ link.title }}</a>
+                </small>
+                {%- endfor -%}
+              {% endif %}
+          </div>
+      </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Footer",
+  "tag": "footer",
+  "class": "section-footer",
+  "settings": [
+    {
+      "type": "image_picker",
+      "label": "Footer Label",
+      "id": "footer_label"
+    },
+    {
+      "type": "link_list",
+      "label": "Footer Menu",
+      "id": "footer_menu"
+    },
+    {
+      "type": "checkbox",
+      "label": "Enable Social Media",
+      "id": "enable_social_media",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Newsletter"
+    },
+    {
+      "type": "checkbox",
+      "label": "Enable Newsletter",
+      "id": "enable_newsletter",
+      "default": true
+    },
+    {
+      "type": "text",
+      "label": "Newsletter Heading",
+      "id": "newsletter_heading"
+    },
+    {
+      "type": "text",
+      "label": "Newsletter Subheading",
+      "id": "newsletter_subheading"
+    },
+    {
+      "type": "header",
+      "content": "Footer Bottom"
+    },
+    {
+      "type": "image_picker",
+      "label": "Footer Logo",
+      "id": "footer_logo"
+    },
+    {
+      "type": "link_list",
+      "label": "Privacy Menu",
+      "id": "privacy_menu"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer"
+    }
+  ]
+}
+{% endschema %}
